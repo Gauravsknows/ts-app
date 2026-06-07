@@ -1,6 +1,6 @@
 # ts-app
 
-A simple TypeScript app with Docker Compose for frontend and backend services.
+A TypeScript app with Docker Compose for frontend and backend services.
 
 ## Project structure
 

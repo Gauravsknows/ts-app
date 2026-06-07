@@ -40,21 +40,21 @@ Then open:
 ## Useful commands
 
 - Start services:
-  ```bash
+```bash
 docker compose up --build
-  ```
+```
 - Stop services:
-  ```bash
+```bash
 docker compose down
-  ```
+```
 - Rebuild only backend:
-  ```bash
+```bash
 docker compose build backend
-  ```
+```
 - Rebuild only frontend:
-  ```bash
+```bash
 docker compose build frontend
-  ```
+```
 
 ## Notes
 

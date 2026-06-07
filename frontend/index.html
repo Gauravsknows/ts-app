@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ts-app Frontend</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2rem;
+      }
+      button {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+      }
+      pre {
+        background: #f4f4f4;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ts-app Frontend</h1>
+    <p>
+      This frontend service is served by Nginx on <strong>http://localhost:3000</strong>.
+      It proxies API requests to the backend service at <strong>http://backend:3001</strong>.
+    </p>
+    <button id="fetchBtn">Fetch Backend Message</button>
+    <pre id="output">Click the button to call <code>/api/message</code>.</pre>
+
+    <script>
+      const output = document.getElementById("output");
+      const fetchBtn = document.getElementById("fetchBtn");
+      const apiUrl = "/api/message";
+
+      fetchBtn.addEventListener("click", async () => {
+        output.textContent = "Loading...";
+        try {
+          const response = await fetch(apiUrl);
+          const data = await response.json();
+          output.textContent = JSON.stringify(data, null, 2);
+        } catch (error) {
+          output.textContent = "Error fetching backend message: " + error;
+        }
+      });
+    </script>
+  </body>
+</html>

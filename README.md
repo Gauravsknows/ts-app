@@ -56,7 +56,7 @@ docker compose build backend
 docker compose build frontend
 ```
 
-## Notes
+## Notes ( for running locally)
 
 - The frontend uses `nginx.conf` to proxy `/api` requests to `http://backend:3001`.
 - The backend is a TypeScript app compiled with `tsc` and served with Node.js.
@@ -67,3 +67,4 @@ npm install
 npm run build
 npm start
 ```
+
